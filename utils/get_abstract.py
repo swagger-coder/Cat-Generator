@@ -9,12 +9,12 @@ try:
 except:
     pass
 
-def get_abstract(content):
+def get_abstract(content, nums):
     tr4s = TextRank4Sentence()
     tr4s.analyze(text=content, lower=True, source = 'all_filters')
     abstract_str = []
     i = 0
-    for item in tr4s.get_key_sentences(num=3):
+    for item in tr4s.get_key_sentences(num=nums):
         # abstract_str += "生成的第{}个摘要为：{}\n".format(i+1, item.sentence)
         abstract_str.append(item.sentence)
         i += 1

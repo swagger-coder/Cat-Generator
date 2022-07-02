@@ -1,5 +1,6 @@
 import argparse
 
+import pandas as pd
 import streamlit as st
 from utils.model import GPT2LMHeadModel
 from transformers import BertTokenizer
@@ -19,21 +20,49 @@ def get_model(vocab_path, model_path):
     model.eval()
     return device, tokenizer, model
 
-def generate_sidebar_elements():
-    st.sidebar.subheader("Parameter configuration")
-    batch_size = st.sidebar.slider("batch_size", min_value=0, max_value=10, value=3)
+def generate_sidebar_elements(flag = True):
+    en = flag
+    option = st.sidebar.selectbox("", ('English', '中文') if en else ('中文', 'English'))
+    if option == "English":
+        en = True
+    else:
+        en = False
+    st.sidebar.subheader("Parameter configuration" if en else "配置参数")
+    paras = {"parameter" if en else "参数": ["title_nums",
+                           "summary_nums",
+                           "generate_max_len",
+                           "repetition_penalty",
+                           "top_k",
+                           "top_p"],
+             "explanation" if en else "解释": ["set the number of titles to generate" if en else "设置生成标题的个数",
+                             "set the number of summaries to generate" if en else "设置生成摘要的个数",
+                             "set the max length of the title" if en else "设置生成标题的最大长度",
+                             "set parameter for repetition penalty" if en else "设置重复处罚率",
+                             "set the number of tokens with the highest probability of retention when decoding" if en else "设置解码时保留概率最高的多少个标记",
+                             "set the flag at which the cumulative retention probability is greater than when decoding" if en else "设置解码时保留概率累加大于多少的标记"]
+    }
+    df = pd.DataFrame(paras)
+    with st.sidebar.expander("See parameters explanation" if en else "查看参数解释"):
+        st.table(df)
+
+    batch_size = st.sidebar.slider("title_nums", min_value=0, max_value=10, value=3)
+    summary_nums = st.sidebar.slider("summary_nums", min_value=0, max_value=5, value=3)
     generate_max_len = st.sidebar.number_input("generate_max_len", min_value=0, max_value=64, value=32, step=1)
     repetition_penalty = st.sidebar.number_input("repetition_penalty", min_value=0.0, max_value=10.0, value=1.2,
                                                  step=0.1)
     top_k = st.sidebar.slider("top_k", min_value=0, max_value=10, value=3, step=1)
     top_p = st.sidebar.number_input("top_p", min_value=0.0, max_value=1.0, value=0.95, step=0.01)
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch_size', default=batch_size, type=int, help='生成标题的个数')
+    parser.add_argument('--summary_nums', type=int, default=summary_nums, help='生成摘要数量')
     parser.add_argument('--generate_max_len', default=generate_max_len, type=int, help='生成标题的最大长度')
     parser.add_argument('--repetition_penalty', default=repetition_penalty, type=float, help='重复处罚率')
     parser.add_argument('--top_k', default=top_k, type=float, help='解码时保留概率最高的多少个标记')
     parser.add_argument('--top_p', default=top_p, type=float, help='解码时保留概率累加大于多少的标记')
     parser.add_argument('--max_len', type=int, default=512, help='输入模型的最大长度，要比config中n_ctx小')
+    parser.add_argument('--language', type=bool, default=en, help='语言')
+
     args = parser.parse_args()
     return args, batch_size, generate_max_len, repetition_penalty, top_k, top_p
 

@@ -54,6 +54,7 @@ def predict_one_sample(model, tokenizer, device, args, content):
         content: 新闻正文
 
     Returns:
+        candidate_responses: 候选标题列表，数量根据args.batch_size指定
 
     """
     # 对新闻正文进行预处理，并判断如果超长则进行截断

@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf0adfb4-522d-4bc8-a4bb-f772e2512e0c" name="Default Changelist" comment="">
+    <list default="true" id="cedf2172-2575-4201-8bdd-e046498c745e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cat-Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cat-Text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Cat-File.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Cat-File.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/UIhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/UIhelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/get_abstract.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_abstract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/get_title.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_title.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2Ay5yQxW5EbRAwRoThCGevfSyTX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2B7ENIX8rRMiH7LiCVNbdM58SwA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,33 +26,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/whl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GPT2-NewsTitle-own" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Projects\软件杯\nlpweb2\whl" />
-      <recent name="E:\Projects\软件杯\nlpweb2" />
-      <recent name="E:\Projects\软件杯\nlpweb2\utils" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\软件杯\nlpweb2\utils" />
-      <recent name="E:\Projects\软件杯\nlpweb2" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cf0adfb4-522d-4bc8-a4bb-f772e2512e0c" name="Default Changelist" comment="" />
-      <created>1655969240619</created>
+      <changelist id="cedf2172-2575-4201-8bdd-e046498c745e" name="Default Changelist" comment="" />
+      <created>1656248682446</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1655969240619</updated>
-      <workItem from="1655969242271" duration="14334000" />
-      <workItem from="1656034191275" duration="25632000" />
-      <workItem from="1656120257751" duration="6953000" />
+      <updated>1656248682446</updated>
+      <workItem from="1656248684318" duration="1021000" />
+      <workItem from="1656608091434" duration="321000" />
+      <workItem from="1656664227004" duration="12569000" />
+      <workItem from="1656726045025" duration="91000" />
+      <workItem from="1656726153987" duration="4162000" />
     </task>
     <servers />
   </component>
