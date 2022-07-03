@@ -21,7 +21,7 @@ from utils.UIhelper import get_model, generate_sidebar_elements, style_button_ro
 # st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 def writer():
-    st.set_page_config(page_icon=Image.open('./static/布偶猫-稀有色.png'), page_title="Cat-File")
+    st.set_page_config(page_icon=Image.open('./static/布偶猫-稀有色.png'), page_title="File")
     img = Image.open('./static/布偶猫-稀有色.png')
     device, tokenizer, model = get_model("vocab/vocab.txt", "output_dir/checkpoint-139805")
     c32, c33, c34 = st.columns([3.5,3,3.5])
@@ -41,18 +41,22 @@ def writer():
         )
     _max_width_()
 
-
-    st.title("News title & abstract Generator" if args.language else "新闻标题&摘要生成器")
+    c27, c28 = st.columns([0.3, 9.7])
+    c2, c3 = st.columns([2, 8])
+    if args.language:
+        c28.title("News Title & Summary Generator")
+    else:
+        c3.title("新闻标题&摘要生成器")
     st.info(
     f"""
-    **INFO:** This is a tool for generating titles and summaries in batches, please upload files in the specified format. You can download [demo.csv](https://filedropper.com/d/s/18PPvpjkFtgXg5lmxwchw4xiLmCdbA) to view the format template.
+    **INFO:** This is a tool for generating titles and summaries in batches. You can generate news titles and summaries by setting the parameters in the left sidebar. Please upload files in certain format. You can download [demo.csv](https://filedropper.com/d/s/18PPvpjkFtgXg5lmxwchw4xiLmCdbA) to view the format template.
     """ if args.language else
     f"""
-    **注意:**  这是批量生成标题和摘要的工具，请按照指定格式上传文件。你可以下载[demo.csv](https://filedropper.com/d/s/18PPvpjkFtgXg5lmxwchw4xiLmCdbA)查看格式模板。
+    **注意:**  这是批量生成标题和摘要的工具。您可以通过设置左侧栏中的参数来生成新闻标题和摘要。请按照指定格式上传文件，你可以下载[demo.csv](https://filedropper.com/d/s/18PPvpjkFtgXg5lmxwchw4xiLmCdbA)查看格式模板。
     """)
 
     c29, c30, c31 = st.columns([1, 6, 1])
-    c32, c33, c34 = st.columns([4,3,3.5])
+    c35, c36, c37 = st.columns([4,3,3.5])
     with c30:
 
         uploaded_file = st.file_uploader(
@@ -80,23 +84,23 @@ def writer():
             st.stop()
 
     # st.balloons()
-    if c33.button("Click to batch generate" if args.language else " 点 击 批 量 生 成", on_click=style_button_row, kwargs={
+    if c36.button("Batch generate" if args.language else " 点 击 批 量 生 成", on_click=style_button_row, kwargs={
     'clicked_button_ix': 3, 'n_buttons': 4}):
         rows = shows.shape[0]
         cols = shows.shape[1]
         title_abs_dict = dict()
 
-        with st.spinner('Please wait for batch processing...' if args.language else
-                        "请等待批量处理…"):
+        with st.spinner('Processing...' if args.language else
+                        "正在批量处理中…"):
             placeholder = st.empty()
             my_bar = st.progress(0)
             # placeholder2 = st.empty()
             for i in range(rows):
-                placeholder.text("The text {} is currently being processed, with {} remaining".format(i+1, rows-i-1) if args.language else
+                placeholder.text("Processing text {}, with {} remaining".format(i+1, rows-i-1) if args.language else
                                  "文本 {} 目前正在处理中，还剩下 {} 个文本未处理".format(i+1, rows-i-1))
                 content = shows.iloc[i,0]
                 my_bar.progress((i+1)//rows * 100)
-                st.text("text"+str(i+1)+"："+content if args.language else
+                st.text("Text"+str(i+1)+"："+content if args.language else
                         "文本"+str(i+1)+"："+content)
                 titles = predict_one_sample(model, tokenizer, device, args, content)
                 for j, item in enumerate(titles):
@@ -123,17 +127,18 @@ def writer():
         # st.table(df2)
         result = pd.concat([shows.iloc[:,:1], df2], axis=1)
         # st.table(result)
-        st.subheader("Click the button below to download results 👇 " if args.language else
-                     "点击下方按钮进行下载结果 👇 ")
+        # c35, c36= st.columns([2, 7])
+        # c36.subheader("Click to download the results" if args.language else
+        #              "点击下载结果 👇 ")
 
-        c29, c30, c31 = st.columns([3.75, 2.5, 3.75])
+        c40, c41, c42 = st.columns([4.5, 3, 3.75])
 
-        with c30:
+        with c41:
 
             CSVButton = download_button(
                 result,
                 "File.csv",
-                "Click to download" if args.language else "  点 击 下 载",
+                "Download" if args.language else " 点 击 下 载",
             )
 
 if __name__ == "__main__":

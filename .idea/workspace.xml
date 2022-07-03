@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cedf2172-2575-4201-8bdd-e046498c745e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/nlpweb2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nlpweb2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cat-Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cat-Text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Cat-File.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Cat-File.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cat-Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Cat-File.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/File.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/UIhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/UIhelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/get_abstract.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_abstract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/get_title.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_title.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GPT2-NewsTitle-own" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../UniLM_Chinese_DEMO-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -43,7 +43,10 @@
       <workItem from="1656608091434" duration="321000" />
       <workItem from="1656664227004" duration="12569000" />
       <workItem from="1656726045025" duration="91000" />
-      <workItem from="1656726153987" duration="4162000" />
+      <workItem from="1656726153987" duration="5441000" />
+      <workItem from="1656761870606" duration="622000" />
+      <workItem from="1656762538130" duration="8015000" />
+      <workItem from="1656806407655" duration="451000" />
     </task>
     <servers />
   </component>
