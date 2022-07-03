@@ -32,7 +32,7 @@ def writer():
     c29, c30 = st.columns([0.3, 9.7])
     c31, c32 = st.columns([2, 8])
     if args.language:
-        c30.title("News Title & Summary Generator")
+        c30.title("News Title & Summary Generator love")
     else:
         c32.title("新闻标题&摘要生成器")
     st.info("**INFO:** This is a tool for processing single news text. You can generate news titles and summaries by setting the parameters in the left sidebar. Please enter your news in the text box below!" if args.language
