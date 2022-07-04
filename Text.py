@@ -20,7 +20,7 @@ from utils.UIhelper import get_model, generate_sidebar_elements
 
 def writer():
     st.set_page_config(
-        page_title="Text",
+        page_title="Cat",
         page_icon=Image.open('./static/布偶猫-稀有色.png'),
     )
     img = Image.open('./static/布偶猫-稀有色.png')

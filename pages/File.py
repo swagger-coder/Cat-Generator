@@ -21,7 +21,7 @@ from utils.UIhelper import get_model, generate_sidebar_elements, style_button_ro
 # st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 def writer():
-    st.set_page_config(page_icon=Image.open('./static/布偶猫-稀有色.png'), page_title="File")
+    st.set_page_config(page_icon=Image.open('./static/布偶猫-稀有色.png'), page_title="Cat")
     img = Image.open('./static/布偶猫-稀有色.png')
     device, tokenizer, model = get_model("vocab/vocab.txt", "output_dir/checkpoint-139805")
     c32, c33, c34 = st.columns([3.5,3,3.5])
